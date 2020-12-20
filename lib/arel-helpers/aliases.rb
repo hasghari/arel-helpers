@@ -1,7 +1,4 @@
-# encoding: UTF-8
-
 module ArelHelpers
-
   module Aliases
     extend ActiveSupport::Concern
 
@@ -10,12 +7,11 @@ module ArelHelpers
         aliases = args.map { |name| arel_table.alias(name) }
 
         if block_given?
-          yield *aliases
+          yield(*aliases)
         else
           aliases
         end
       end
     end
   end
-
 end
